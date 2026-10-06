@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "AddUser";
+}
+
+@model MVCDataAnnotations.Models.User
+
+@* Drag and drop the following files from Scripts folder into the "<head>" section. *@
+<script src="~/Scripts/jquery-3.7.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+@* Drag and drop the following file from Content folder into the "<head>" section. *@
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+
+@using (Html.BeginForm("DisplayUser", "User"))
+{
+     <div>
+        @Html.LabelFor(U => U.Name) <br />
+        @Html.EditorFor(U => U.Name) <br />
+        @Html.ValidationMessageFor(U => U.Name)
+     </div>
+     <div>
+        @Html.LabelFor(U => U.Password) <br />
+        @Html.EditorFor(U => U.Password) <br />
+        @Html.ValidationMessageFor(U => U.Password)
+    </div>
+    <div>
+        @Html.LabelFor(U => U.ConfirmPassword) <br />
+        @Html.EditorFor(U => U.ConfirmPassword) <br />
+        @Html.ValidationMessageFor(U => U.ConfirmPassword)
+     </div>
+     <div>
+        @Html.LabelFor(U => U.DOB) <br />
+        @Html.EditorFor(U => U.DOB) <br />
+        @Html.ValidationMessageFor(U => U.DOB)
+    </div>
+    <div>
+        @Html.LabelFor(U => U.Mobile) <br />
+        @Html.EditorFor(U => U.Mobile) <br />
+        @Html.ValidationMessageFor(U => U.Mobile)
+    </div>
+    <div>
+        @Html.LabelFor(U => U.Email) <br />
+        @Html.EditorFor(U => U.Email) <br />
+        @Html.ValidationMessageFor(U => U.Email)
+    </div>
+    <div>
+        @Html.LabelFor(U => U.Address) <br />
+        @Html.EditorFor(U => U.Address) <br />
+    </div>
+    <div>
+        <input type="submit" value="Save User" class="btn btn-primary" />
+        <input type="reset" value="Reset Data" class="btn btn-danger" />
+    </div>
+}
+
+
